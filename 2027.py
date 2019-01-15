@@ -1,13 +1,4 @@
-"""
-2027. 대각선 출력하기
+# 2027. 대각선 출력하기
+# https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5QFuZ6As0DFAUq&categoryId=AV5QFuZ6As0DFAUq&categoryType=CODE
 
-주어진 텍스트를 그대로 출력하세요.
-
-출력예시)
-#++++
-+#+++
-++#++
-+++#+
-++++#
-"""
 print("#++++\n+#+++\n++#++\n+++#+\n++++#")
