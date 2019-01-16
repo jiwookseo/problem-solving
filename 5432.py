@@ -15,8 +15,8 @@ for i in range(1,tc+1):
                 count+=1
             else :
                 temp=result
-                for i in current:
-                    temp=temp[i]
+                for j in current:
+                    temp=temp[j]
                 temp.append([0])
                 count+=1
                 current.append(1)
