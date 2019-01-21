@@ -4,19 +4,29 @@
 for i in range(1,11):
     dump=int(input())
     box=list(map(int,input().split()))
-    bl=100
+    bw=100
     row=[0]*max(box)
     for j in box:
         for k in range(j):
             row[k]+=1
-    index=0
-    for _ in range(dump):
-        row[-1]-=1
-        while(row[index]==bl):
-            index+=1
-        row[index]+=1
-        if (len(row)-1)==index:
+    while(dump!=0):
+        if len(row)<=1:
             break
-        if row[-1]==0:
-            row.pop()
-    print(f"#{i} {len(row)-row.count(100)}")
+        if row[-1]>dump:
+            down=dump
+            row[-1]-=down
+            dump=0
+        else :
+            down=row.pop()
+            dump-=down
+        while(1):
+            while(row[0]==bw):
+                row.pop(0)
+            temp=bw-row[0]
+            if temp<=down:
+                row.pop(0)
+                down-=temp
+            else :
+                row[0]+=down
+                break
+    print(f"#{i} {len(row)}")

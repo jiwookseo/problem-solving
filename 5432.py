@@ -4,22 +4,12 @@
 tc=int(input())
 for i in range(1,tc+1):
     ins=input().replace("()","o")
-    result=[]
     current=[]
     count=0
     for s in ins:
         if s=="(":
-            if result==[]:
-                result=[[0]]
-                current=[0]
-                count+=1
-            else :
-                temp=result
-                for j in current:
-                    temp=temp[j]
-                temp.append([0])
-                count+=1
-                current.append(1)
+            count+=1
+            current.append(0)
         elif s==")":
             current.pop()
         else:
