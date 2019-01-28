@@ -1,0 +1,8 @@
+i=input().split(" ")
+A=int(i[0])
+B=int(i[1])
+print(A+B)
+print(A-B)
+print(A*B)
+print(int(A/B))
+print(A%B)
