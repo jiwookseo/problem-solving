@@ -10,7 +10,7 @@
             "label": "save and compile for C",
             "command": "gcc",
             "args": [
-                "${fileBasenameNoExtension}.c",
+                "${fileBasename}",
                 "-g",
                 "-o",
                 "${fileBasenameNoExtension}"

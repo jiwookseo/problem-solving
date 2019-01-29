@@ -1,5 +1,6 @@
 // 4864. [파이썬 S/W 문제해결 기본] 3일차 - 문자열 비교
 // Brute Force
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

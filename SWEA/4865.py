@@ -1,4 +1,5 @@
 # 4865. [파이썬 S/W 문제해결 기본] 3일차 - 글자수 D2
+
 for tc in range(1,int(input())+1):
     a=input()
     b=input()
