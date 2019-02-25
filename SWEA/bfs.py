@@ -1,87 +1,51 @@
-class stack:
-    def __init__(self, size, init=None):
-        self.top_index=-1
-        self.size=size
+class Queue:
+    def __init__(self,size,init=None):
         self.init=init
-        self.storage=[init]*size
-
-    def push(self, item):
-        if self.top_index==self.size-1:
-            print("OverflowError")
-            return
-        self.top_index+=1
-        self.storage[self.top_index]=item
-        return True
-
-    def pop(self):
-        if self.top_index==-1:
-            print("UnderflowError")
-            return "UnderflowError"
-        pop_item=self.storage[self.top_index]
-        self.storage[self.top_index]=self.init
-        self.top_index-=1
-        return pop_item
-    
+        self.size=size
+        self.storage=[self.init]*self.size
+        self.front=-1
+        self.rear=-1
+    def enQueue(self,item):
+        self.rear+=1
+        self.storage[self.rear]=item
+    def deQueue(self):
+        self.front+=1
+        return self.storage[self.front]
     def isEmpty(self):
-        return True if self.top_index==-1 else False
-    
-    def top(self):
-        return self.storage[self.top_index] if self.isEmpty() else "EmptyStack"
-
-class node:
-    def __init__(self):
-        self.near=[]
-    def add(self,item):
-        if not self.check(item):
-            self.near.append(item)
-    def check(self, item):
-        for i in self.near:
-            if i==item:
-                return True
-        return False
-
-input_list=list(map(int,input().split(",")))
-# 1,2,1,3,2,4,2,5,4,6,5,6,6,7,3,7
-maximum=0
-for i in input_list:
-    if i>maximum:
-        maximum=i
-
-nodes=[node() for _ in range(maximum+1)]
-temp1,temp2=0,0
-for i in range(len(input_list)):
-    if i%2:
-        temp2=input_list[i]
-        nodes[temp1].add(temp2)
-        nodes[temp2].add(temp1)
-    else:
-        temp1=input_list[i]
-
-start=int(input())
-visited=[False for _ in range(maximum+1)]
-s=stack(maximum+1)
+        return self.front==self.rear
 result=[]
-v=start
-visited[v]=True
-result.append(str(v))
+def bfs(G,v):
+    visited=[0]*n
+    q=Queue(n**2)
+    q.enQueue(v)
+    while(not q.isEmpty()):
+        t=q.deQueue()
+        if not visited[t]:
+            visited[t]=True
+            result.append(str(t))
+        for i in G[t]:
+            if not visited[i]:
+                q.enQueue(i)
+# n=8
+# G=[[0,1,2],[0,3,4],[0,5],[1],[1,6],[2,7],[4],[5]]
+# ans : 0-1-2-3-4-5-6-7
 
-while(True):
-    temp=[]
-    for i in nodes[v].near:
-        if not visited[i]:
-            temp.append(i)
-    if temp!=[]:
-        s.push(v)
-        minimum=temp[0]
-        for i in temp:
-            if minimum>i:
-                minimum=i
-        v=minimum
-        visited[v]=True
-        result.append(str(v))
-    else:
-        if s.isEmpty():
-            break
-        else:
-            v=s.pop()
+# n=9
+# G=[[1,2,3],[0,4,5],[0],[0,6,7,8],[1],[1],[3],[3],[3]]
+# ans : 0-1-2-3-4-5-6-7-8
+
+string="1,2,1,3,2,4,2,5,4,6,5,6,6,7,3,7".split(',')
+i=0
+ls=len(string)
+n=8
+G=[[] for _ in range(n)]
+while(1):
+    G[int(string[i])].append(int(string[i+1]))
+    G[int(string[i+1])].append(int(string[i]))
+    i+=2
+    if i>=ls:
+        break
+# ans : 1-2-3-4-5-7-6
+
+bfs(G,1)
 print("-".join(result))
