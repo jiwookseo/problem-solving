@@ -1,4 +1,5 @@
 # 5102. [파이썬 S/W 문제해결 기본] 6일차 - 노드의 거리 D2
+
 class Queue:
     def __init__(self,size,init=None):
         self.size=size
