@@ -1,8 +1,9 @@
 # 1974 스도쿠 검증 D2
 # https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5Psz16AYEDFAUq&categoryId=AV5Psz16AYEDFAUq&categoryType=CODE
+# 3가지 version으로 작성하였는데, 메모리, 퍼포먼스 모두 비슷한 수준
+# 가장 익숙한, 빨리 짤 수 있는 코드로 작성하는 것이 좋겠다.
+
 # ver.1
-# 내장 함수와 set 캐스팅을 적극적으로 사용함
-# ver.2에 비해 메모리 감소, 실행시간 증가
 # 메모리 49,100 kb
 # 실행시간 142 ms
 for tc in range(1,int(input())+1):

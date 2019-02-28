@@ -2,7 +2,6 @@
 # https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5Psz16AYEDFAUq&categoryId=AV5Psz16AYEDFAUq&categoryType=CODE
 # ver.3
 # board를 저장하지 않고 원소 별로 인덱스를 저장해 처리하는 방식
-# ver.1에 비교해서도 더욱 메모리를 적게 사용한다.
 # 메모리 48,052 kb
 # 실행시간 143 ms
 

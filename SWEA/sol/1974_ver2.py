@@ -2,7 +2,6 @@
 # https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5Psz16AYEDFAUq&categoryId=AV5Psz16AYEDFAUq&categoryType=CODE
 # ver.2
 # 내장 함수와 set 캐스팅을 사용하지 않고 vistied 이용
-# ver.1에 비해 메모리 증가, 실행시간 감소
 # 메모리 50,680 kb
 # 실행시간 130 ms
 for tc in range(1,int(input())+1):
