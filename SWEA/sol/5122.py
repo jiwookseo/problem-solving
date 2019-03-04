@@ -1,3 +1,5 @@
+# 5122. [파이썬 S/W 문제해결 기본] 7일차 - 수열 편집 D4
+
 class Node:
     def __init__(self,data,next=None):
         self.data=data
