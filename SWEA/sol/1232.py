@@ -6,11 +6,11 @@ class Node:
         self.left=left
         self.right=right
 
-def preorder(nd):
+def postorder(nd):
     global s
     if nd:
-        preorder(nd.left)
-        preorder(nd.right)
+        postorder(nd.left)
+        postorder(nd.right)
         if not isinstance(nd.data, int):
             b=s.pop()
             a=s.pop()
@@ -38,5 +38,5 @@ for tc in range(1,11):
             nd.data=i[1]
             nd.left=ns[int(i[2])]
             nd.right=ns[int(i[3])]
-    preorder(ns[1])
+    postorder(ns[1])
     print(f"#{tc} {int(s.pop())}")
