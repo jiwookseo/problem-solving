@@ -1,15 +1,18 @@
 # 1242. [S/W 문제해결 응용] 1일차 - 암호코드 스캔 D5
 # https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV15JEKKAM8CFAYD&categoryId=AV15JEKKAM8CFAYD&categoryType=CODE
 dec = {'0110': 0, '1100': 1, '1001': 2, '1110': 3, '0001': 4, '1000': 5, '0111': 6, '1101': 7, '1011': 8, '0101': 9}
+h = {'0': '0000', '1': '0001', '2': '0010', '3': '0011', '4': '0100', '5': '0101', '6': '0110', '7': '0111',
+     '8': '1000', '9': '1001', 'A': '1010', 'B': '1011', 'C': '1100', 'D': '1101', 'E': '1110', 'F': '1111'}
 for tc in range(1, int(input()) + 1):
     r, c = map(int, input().split())
     code = set()
-    prev = None
     inp = []
     for _ in range(r):
-        temp = input().strip('0')
-        if temp not in inp:
-            inp.append(temp)
+        temp = input().strip('0').split('00000')
+        for i in temp:
+            i = i.strip('0')
+            if i not in inp:
+                inp.append(i)
     for temp in inp:
         for i in code:
             temp = temp.replace(i, "")
@@ -26,8 +29,7 @@ for tc in range(1, int(input()) + 1):
     for temp in real:
         ans = ''
         for i in temp:
-            for j in range(3, -1, -1):
-                ans += "1" if int(i, 16) & (1 << j) else "0"
+            ans += h[i]
         t = len(ans) - 1
         while ans[t] == "0":
             t -= 1
