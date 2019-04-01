@@ -34,4 +34,7 @@ $ tree
     : Solved Problem 4/4
 
 * [Stack/Queue Course](https://programmers.co.kr/learn/courses/30/parts/12081)  
-    : Solved Problem 3/6
+    : Solved Problem 6/6
+    
+* [Heap](https://programmers.co.kr/learn/courses/30/parts/12117)  
+    : Solved Problem 0/4
