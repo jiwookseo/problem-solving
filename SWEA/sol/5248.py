@@ -20,8 +20,7 @@
 #             if c1 and c2:
 #                 break
 #         if sa:
-#             djs.append(sa.union(sb))
-#             djs.remove(sa)
+#             sa.update(sb)
 #             djs.remove(sb)
 #     print("#{} {}".format(TC, len(djs)))
 

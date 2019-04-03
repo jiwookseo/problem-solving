@@ -3,7 +3,7 @@
 
 
 def prim(start):
-    global g, nds, result, visited, v
+    global g, nds, result, v
     q = list(range(v + 1))
     while q:
         u = extract(q)
@@ -14,7 +14,7 @@ def prim(start):
 
 
 def extract(q):
-    global g, nds, visited, v
+    global g, nds, v
     mini = 11
     extract_result = 0
     for i in q:
@@ -31,7 +31,6 @@ for TC in range(1, int(input()) + 1):
     for _ in range(e):
         a, b, w = map(int, input().split())
         g[a][b] = g[b][a] = w
-    visited = [False] * (v + 1)
     result = 0
     nds = [11] * (v + 1)
     nds[0] = 0
