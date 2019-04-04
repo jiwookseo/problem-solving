@@ -3,8 +3,8 @@
 # index 로 접근하는 방법, 메모리를 최소한으로 사용하기 위한 가지치기 등으로 퍼포먼스 최적화
 for TC in range(1, int(input()) + 1):
     n, m = map(int, input().split())
-    tree = {n: (n, 0)}
-    q = [tree[n]]
+    memo = {n}
+    q = [(n, 0)]
     i = 0
     while True:
         num, depth = q[i]
@@ -21,9 +21,8 @@ for TC in range(1, int(input()) + 1):
         if m in cd:
             break
         for item in cd:
-            if item not in tree:
-                nex = (item, result)
-                q.append(nex)
-                tree[item] = nex
+            if item not in memo:
+                q.append((item, result))
+                memo.add(item)
         i += 1
     print("#{} {}".format(TC, result))
