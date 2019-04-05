@@ -4,7 +4,7 @@ for TC in range(1, int(input()) + 1):
     n, m, h = map(int, input().split())
     board = [list(map(int, input().split())) for _ in range(n)]
     answer = 0
-    result = [[0] * (n - m + 1) for _ in range(n)]
+    result = [[0] * n for _ in range(n)]
     for r in range(n):
         for c in range(n - m + 1):
             for i in range(1, 1 << m):
@@ -19,20 +19,15 @@ for TC in range(1, int(input()) + 1):
                         temp_res += temp ** 2
                 if temp_res > result[r][c]:
                     result[r][c] = temp_res
-    row_maxi = []
-    for row in result:
-        maxi = 0  # 한 줄에 한 개 선택
-        for i in range(min(n - m + 1, m)):
-            temp = sorted(row[i::m], reverse=True)
-            if temp[0] > maxi:
-                maxi = temp[0]
-            if len(temp) > 1:  # 한 줄에 두 개 선택
-                two = temp[0] + temp[1]
-                if two > answer:
-                    answer = two
-        row_maxi.append(maxi)
-    row_maxi.sort(reverse=True)
-    temp = row_maxi[0] + row_maxi[1]
-    if temp > answer:
-        answer = temp
-    print("#{} {}".format(TC, answer))
+    flatten = []
+    for i in range(n):
+        for j in range(n):
+            flatten.append(result[i][j])
+    fl = len(flatten)
+    maxi = 0
+    for i in range(fl):
+        for j in range(i + m, fl):
+            temp = flatten[i] + flatten[j]
+            if maxi < temp:
+                maxi = temp
+    print("#{} {}".format(TC, maxi))

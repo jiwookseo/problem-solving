@@ -1,7 +1,9 @@
+# 2117. [모의 SW 역량테스트] 홈 방범 서비스
+# https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5V61LqAf8DFAWu&categoryId=AV5V61LqAf8DFAWu&categoryType=CODE
+
 f = [0, 1]
 g = [[]]
-
-
+ 
 def fee(i):
     global f
     if len(f) > i:
@@ -9,19 +11,15 @@ def fee(i):
     else:
         f.append(fee(i - 1) + 4 * (i - 1))
         return f[i]
-
-
+ 
 def grid(n):
     global g
     if len(g) > n:
         return g[n]
     else:
-        l = len(g)
-        for m in range(l, n + 1):
-            g.append([(i, j) for i in range(-m + 1, m) for j in range(-m + 1, m) if abs(i) + abs(j) <= m - 1])
+        g.append(grid(n - 1) + [(i, j) for i in range(-n + 1, n) for j in range(-n + 1, n) if abs(i) + abs(j) == n - 1])
         return g[n]
-
-
+ 
 def check(n):
     global board, result, N
     d = grid(n)
@@ -37,8 +35,7 @@ def check(n):
             if count > maxi:
                 maxi = count
     return maxi
-
-
+ 
 for TC in range(1, int(input()) + 1):
     N, M = map(int, input().split())
     board = [list(map(int, input().split())) for _ in range(N)]
