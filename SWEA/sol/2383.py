@@ -34,32 +34,25 @@ for TC in range(1, int(input()) + 1):
             elif board[r][c] > 1:
                 stair.append((r, c, -board[r][c] - 1))
     result = 10000000
-    s = len(stair)
     p = len(person)
-    g = [[0] * p for _ in range(s)]
-    for sn in range(s):
+    g = [[0] * p for _ in range(2)]
+    for sn in range(2):
         sr, sc = stair[sn][:2]
         for pn in range(p):
             pr, pc = person[pn]
             g[sn][pn] = abs(pr - sr) + abs(pc - sc)
-    for temp in range(s ** p):
-        t = temp
-        res = []
-        while t:
-            res.append(t % s)
-            t //= s
-        while len(res) != p:
-            res.append(0)
-        count = 0
-        waiting = [[] for _ in range(s)]
+    for i in range(1 << p):
+        w = [[], []]
         for pn in range(p):
-            sn = res[pn]
-            waiting[sn].append(g[sn][pn])
-        for ws in waiting:
-            ws.sort()
+            if i & (1 << pn):
+                w[1].append(g[1][pn])
+            else:
+                w[0].append(g[0][pn])
+        w[0].sort()
+        w[1].sort()
         times = 0
-        for sn in range(s):
-            tw = waiting[sn]
+        for sn in range(2):
+            tw = w[sn]
             if not tw:
                 continue
             st = stair[sn][2]
