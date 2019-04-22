@@ -3,9 +3,9 @@
 Algorithm practice on SW Expert Academy / Programmers / BOJ
 
 
-* 2019-03-09, 삼성 SW 역량테스트 A 형 취득
+* 2019-03-09, 삼성 SW 역량테스트 A 형 취득, 사용언어 : Python
 
-* 2019-04-06, 삼성 SW 역량테스트 A+ 형 취득
+* 2019-04-06, 삼성 SW 역량테스트 A+ 형 취득, 사용언어 : Python
 
 
 
