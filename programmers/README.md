@@ -30,11 +30,18 @@ $ tree
 
 ## II. Learn
 
-* [Hash Course](https://programmers.co.kr/learn/courses/30/parts/12077)  
-    : Solved Problem 4/4
-
-* [Stack/Queue Course](https://programmers.co.kr/learn/courses/30/parts/12081)  
+* [Hash Course](https://programmers.co.kr/learn/courses/30/parts/12077) 
+    
+: Solved Problem 4/4
+    
+* [Stack/Queue Course](https://programmers.co.kr/learn/courses/30/parts/12081) 
+    
     : Solved Problem 6/6
     
-* [Heap](https://programmers.co.kr/learn/courses/30/parts/12117)  
+* [Heap](https://programmers.co.kr/learn/courses/30/parts/12117) 
+    
     : Solved Problem 0/4
+
+* [KAKAO BLIND RECRUITMENT 2018](https://programmers.co.kr/learn/challenges?selected_part_id=12286)
+
+  : Solved Problem 3/7
